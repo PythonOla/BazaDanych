@@ -10,8 +10,8 @@
 
 ## Technikalia (do rozstrzygnięcia po powyszym)
 
-- Jaki format bazy? json? 
-- Jaka biblioteka do interfejsu - znaleźć
+- Jaki format bazy? JSON 
+- Jaka biblioteka do interfejsu - Kivy
 - Jaka biblioteka do wodotrysków? - znaleźć
 - Jakie klasy/obiekty/wzorce projektowe wykorzystać - potem
 - Czy robimy testy jednostkowe - tak
@@ -24,4 +24,42 @@
 
 
 ## Linki do znalezisk
+
+Kivy - https://kivy.org/#home
+
+## Projekt
+
+### Format danych
+
+- users
+    - id
+    - name
+    - surname
+    - birth date
+    - friends
+    - photos
+    - like (comments, posts)
+    - posts
+    - comments
+    - average daily activity
+    - joined on
+
+- commets
+    - id
+    - first comment
+    - reply comment
+    - likes (?)
+    - text
+    - parent id (previous post/comment id)
+
+- likes
+    - id
+    - comment likes
+    - post likes
+    - parent id 
+
+- posts
+    - id
+    - text
+    - attachments
 

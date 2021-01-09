@@ -1,7 +1,8 @@
-#To będziemy uruchamiać
+#To bedziemy uruchamiac
 
-def main() {
-    pass
-}
+import kivy as kiwi
+
+def main():
+    print(kiwi)
 
 main()
