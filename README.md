@@ -46,20 +46,26 @@ Kivy - https://kivy.org/#home
 
 - commets
     - id
-    - first comment
-    - reply comment
-    - likes (?)
+    #is_first_comment baza 
+    - first comment and reply comment
+    - likes 
+    #baza text
     - text
     - parent id (previous post/comment id)
+    #napisać komentarz w bazie danych -> parent_id
 
 - likes
     - id
+    #comments_likes
     - comment likes
+    #posts likes
     - post likes
     - parent id 
 
 - posts
     - id
     - text
+    #zrobic attacjmenty w bazie
     - attachments
+    - likes
 
