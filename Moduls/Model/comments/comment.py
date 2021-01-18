@@ -33,3 +33,7 @@ class Comment:
 
     def __ne__(self, other):
         return self.id != other.id
+
+    def get_context(self):
+        #to do
+        pass

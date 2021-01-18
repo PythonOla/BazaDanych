@@ -14,3 +14,7 @@ class Post:
 
     def __ne__(self, other):
         return self.id != other.id
+
+    def get_comments(self):
+        #to do
+        pass

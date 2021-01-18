@@ -19,3 +19,18 @@ class User:
 
     def __ne__(self, other):
         return self.id != other.id
+
+    def get_likes(self):
+        #to do
+        pass
+
+    def get_comments(self):
+        pass
+
+    def get_posts(self):
+        pass
+
+    def get_friends(self):
+        pass
+
+     
