@@ -4,9 +4,10 @@ from ..likes import Like_list
 from ..posts import Posts_list
 from ..comments import Comments_list
 
-
+#uwaga! Ola nie jest ściezką
+BASE_PATH = 'ola :)'
 class Input:
-    def __init__(self, data_base_path):
+    def __init__(self, data_base_path = BASE_PATH):
         self.data_base_path = data_base_path
         with open(data_base_path, 'r', encoding='utf-8') as file:
             data = load(file)

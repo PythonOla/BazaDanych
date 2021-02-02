@@ -16,5 +16,9 @@ class Post:
         return self.id != other.id
 
     def get_comments(self):
-        #to do
-        pass
+        #verify
+        base = Input()
+        return base.comments_list.get_comments_by_ids(self.comments)
+
+    def how_many_likes(self):
+        return len(self.likes)

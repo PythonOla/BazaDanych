@@ -69,3 +69,13 @@ Kivy - https://kivy.org/#home
     - attachments
     - likes
 
+### Co mamy?
+- Profile.py
+- Modele bez metod 
+
+### Czego brakuje?
+- Metod do modeli
+- Metod do User activity (kontrolery)
+- Zmiany danych w bazie
+- widoków
+- 

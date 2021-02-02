@@ -1,4 +1,4 @@
-
+from ..InOut import Input
 
 class User:
     def __init__(self, data):
@@ -21,16 +21,21 @@ class User:
         return self.id != other.id
 
     def get_likes(self):
-        #to do
-        pass
+        #verify
+        base = Input()
+        return base.likes_list.get_likes_by_ids(self.likes)
 
     def get_comments(self):
-        pass
+        base = Input()
+        return base.comments_list.get_comments_by_ids(self.comments)
 
     def get_posts(self):
-        pass
+        base = Input()
+        return base.posts_list.get_posts_by_ids(self.posts)
 
     def get_friends(self):
-        pass
+        #1. dostać się do bazy + TO DO ŚCIEZKA
+        base = Input()
+        return base.user_list.get_names_by_ids(self.friends)
 
      

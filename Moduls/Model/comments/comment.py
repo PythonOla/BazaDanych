@@ -1,4 +1,4 @@
-
+from ..InOut import Input 
 
 class Comment:
     def __init__(self, data):
@@ -35,5 +35,11 @@ class Comment:
         return self.id != other.id
 
     def get_context(self):
-        #to do
-        pass
+        base = Input()
+        if self.is_first_comment:
+            return base.posts_list.get_post_by_id(self.parent_id)
+        #jeśli odpowiedź -> ściągamy kometarz do którego się odnosi
+        else:
+            return base.comments_list.get_comment_by_id(self.parent_id)
+
+        
