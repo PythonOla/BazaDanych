@@ -1,4 +1,4 @@
-
+from ..InOut import Input
 
 class Post:
     def __init__(self, data):
@@ -16,7 +16,6 @@ class Post:
         return self.id != other.id
 
     def get_comments(self):
-        #verify
         base = Input()
         return base.comments_list.get_comments_by_ids(self.comments)
 

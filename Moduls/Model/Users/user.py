@@ -21,7 +21,6 @@ class User:
         return self.id != other.id
 
     def get_likes(self):
-        #verify
         base = Input()
         return base.likes_list.get_likes_by_ids(self.likes)
 
@@ -38,4 +37,15 @@ class User:
         base = Input()
         return base.user_list.get_names_by_ids(self.friends)
 
-     
+    def post_created(self, id_):
+        self.posts.append(id_)
+        self._update_self_in_database()
+        
+    def _update_self_in_database(self):
+        base = Input()
+        base.user_list.update_users_by_id(self.id, self)
+
+    def post_deleted(self, id_):
+        self.posts = [post for post in self.posts if post.id != id_]
+        self._update_self_in_database()
+        
