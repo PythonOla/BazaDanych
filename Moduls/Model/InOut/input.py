@@ -4,6 +4,7 @@ from ..likes import Like_list
 from ..posts import Posts_list
 from ..comments import Comments_list
 
+#to do
 #uwaga! Ola nie jest ściezką
 BASE_PATH = 'ola :)'
 class Input:

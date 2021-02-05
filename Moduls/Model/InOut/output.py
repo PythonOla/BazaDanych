@@ -1,7 +1,7 @@
 from json import load
 from json import dumps #słownik -> string
 
-
+#to do
 #uwaga! Ola nie jest ściezką
 BASE_PATH = 'ola :)'
 class Output:
