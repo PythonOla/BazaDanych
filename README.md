@@ -72,10 +72,13 @@ Kivy - https://kivy.org/#home
 ### Co mamy?
 - Profile.py
 - Modele bez metod 
-
-### Czego brakuje?
 - Metod do modeli
 - Metod do User activity (kontrolery)
 - Zmiany danych w bazie
+
+### Czego brakuje?
 - widoków
 - 
+
+
+Baza danych książek, płyt, itp. Baza powinna być zapisywana do pliku (txt, CSV, JSON). Operacje na bazie: wstawianie, usuwanie, wyszukiwanie, listowanie.
