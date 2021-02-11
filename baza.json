@@ -39,5 +39,8 @@
             "avg_daily_activity": 2.12,
             "joined_on": "2012-05-04"
         }
-    ]
+    ],
+    "likes": [],
+    "posts": [],
+    "comments": []
 }

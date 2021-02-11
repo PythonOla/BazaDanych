@@ -1,12 +1,13 @@
 from json import load
+from os import path
+from sys import argv
 from ..Users import User_list
 from ..likes import Like_list
 from ..posts import Posts_list
 from ..comments import Comments_list
 
-#to do
-#uwaga! Ola nie jest ściezką
-BASE_PATH = 'ola :)'
+
+BASE_PATH = path.join(path.dirname(argv[0]), 'baza.json')
 class Input:
     def __init__(self, data_base_path = BASE_PATH):
         self.data_base_path = data_base_path
