@@ -1,10 +1,11 @@
 from ...Model.InOut.Input import Input
-from ...View.Listing.listing import Listing
+from ...View.UserList.UserList import UserList
  
 
 class User_list_controller:
-    def __init__(self):
+    def __init__(self, *args):
         self.data = Input().user_list.users
+        self.args = args
     
     def show(self):
         fields = ['Imię i Nazwisko', 'Data Urodzenia', 'Przyjaciół', 'Aktywność', 'Dołączył']
@@ -17,5 +18,5 @@ class User_list_controller:
                 'Aktywność': str(user.avg_daily_activity),
                 'Dołączył': user.joined_on
             })
-        return Listing(users, fields)
+        return UserList({'rows': users, 'fields': fields}, self.args[0])
     

@@ -2,7 +2,10 @@
 from Moduls.View.Menu.Menu import Menu
 from Moduls.View.Util.ListItem import ListItem
 from Moduls.View.Listing.listing import Listing
+from Moduls.View.Finder.finder import Finder
+from Moduls.View.UserMenu.UserMenu import UserMenu
 from Moduls.Kontroler.Show.users_list import User_list_controller
+
 
 import kivy as kiwi
 kiwi.require('2.0.0')
@@ -32,25 +35,26 @@ class Baza(BoxLayout):
 
     def __init__(self, **kwargs):
         super(Baza, self).__init__(**kwargs)
-        self.changeOptions1()
+        self.createOptions()
 
-    def changeOptions1(self, *args):
+    def createOptions(self, *args):
         self.clear_widgets()
         self.add_widget(Menu({
-            "Click": self.changeOptions2,
-            "Not Click": self.nonClick
+            "Przeglądaj uzytkowników": self.list_users,
+            "Znajdz uzytkownika": self.find_user
         }))
 
-    def changeOptions2(self, *args):
+    def open_user_menu(self, id):
         self.clear_widgets()
-        self.add_widget(Menu({
-            "Click me too": self.changeOptions1,
-            "Don't click me either": self.nonClick 
-        }))
+        self.add_widget(UserMenu(id, self.find_user))
+
+    def find_user(self, *args):
+        self.clear_widgets()
+        self.add_widget(Finder(self.open_user_menu, self.createOptions))
     
-    def nonClick(self, *args):
+    def list_users(self, *args):
         self.clear_widgets()
-        l = User_list_controller()
+        l = User_list_controller(self.createOptions)
         self.add_widget(l.show())
 class MainApp(App):
     def build(self):
