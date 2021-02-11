@@ -1,8 +1,10 @@
-#na poźniej
-from view import details_profile #szczegóły
+from ...View.Profile.Profile import Profile
+from ...Model.InOut.Input import Input
 
 class User_profile_controller:
-    def __init__(self, user):
+    def __init__(self, _id, *args):
+        self.args = args
+        user = Input().user_list.get_user_by_id(_id)
         self.data = {
             'name' : user.name,
             'surname' : user.surname,
@@ -14,4 +16,4 @@ class User_profile_controller:
         }
     
     def show(self):
-        return details_profile(self.data)
+        return Profile(self.data, self.args[0])

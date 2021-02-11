@@ -1,9 +1,10 @@
+from os import path
+from sys import argv
 from json import load
 from json import dumps #słownik -> string
 
-#to do
-#uwaga! Ola nie jest ściezką
-BASE_PATH = 'ola :)'
+
+BASE_PATH = path.join(path.dirname(argv[0]), 'baza.json')
 class Output:
     def __init__(self, data_base_path = BASE_PATH):
         self.data_base_path = data_base_path

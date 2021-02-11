@@ -33,7 +33,6 @@ class User:
         return base.posts_list.get_posts_by_ids(self.posts)
 
     def get_friends(self):
-        #1. dostać się do bazy + TO DO ŚCIEZKA
         base = Input()
         return base.user_list.get_names_by_ids(self.friends)
 

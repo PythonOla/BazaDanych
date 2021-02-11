@@ -21,6 +21,12 @@ class User_list:
             lambda usr: usr.id in ids
         )
 
+    def get_user_by_id(self, _id):
+        print(_id)
+        users = [user for user in self.users if int(user.id) == int(_id)]
+        print([user.id for user in self.users])
+        return users[0]
+
     def _save_usr_to_database(self):
         data_base = Output()
         data_base.update_users(self.users)
