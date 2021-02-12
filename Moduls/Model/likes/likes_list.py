@@ -1,11 +1,11 @@
-from .like import Like
+from . import like as l
 from ..InOut import Output
 
 class Like_list:
     def __init__(self, likes):
         self.likes = []
         for like in likes:
-            self.likes.append(Like(like))
+            self.likes.append(l.Like(like))
     
     def get_likes_by_ids(self, ids):
         likes = []
@@ -35,7 +35,7 @@ class Like_list:
             'post_likes' : True,
             'comment_likes' : False
         }
-        self.likes.append(Like(data))
+        self.likes.append(l.Like(data))
         self._save_like_to_database()
         return new_id
 
@@ -52,7 +52,7 @@ class Like_list:
             'post_likes' : False,
             'comment_likes' : True
         }
-        self.likes.append(Like(data))
+        self.likes.append(l.Like(data))
         self._save_like_to_database()
         return new_id
 

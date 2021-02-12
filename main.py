@@ -13,23 +13,6 @@ kiwi.require('2.0.0')
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 
-fields = ['a', 'b', 'c']
-testData = [{
-    'a': 'Ola',
-    'b': 'Gryza',
-    'c': 'Grzesia'
-},
-{
-    'a': 'Ola',
-    'b': 'Gryza',
-    'c': 'Grzyba'
-},
-{
-    'a': 'Decussata',
-    'b': 'Tez',
-    'c': 'Gryza'
-}
-]
 
 class Baza(BoxLayout):
 
@@ -56,6 +39,7 @@ class Baza(BoxLayout):
         self.clear_widgets()
         l = User_list_controller(self.createOptions)
         self.add_widget(l.show())
+        
 class MainApp(App):
     def build(self):
         return Baza()

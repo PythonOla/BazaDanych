@@ -21,23 +21,23 @@ class User:
         return self.id != other.id
 
     def get_likes(self):
-        base = Input()
+        base = Input.Input()
         return base.likes_list.get_likes_by_ids(self.likes)
 
     def get_comments(self):
-        base = Input()
+        base = Input.Input()
         return base.comments_list.get_comments_by_ids(self.comments)
 
     def get_posts(self):
-        base = Input()
+        base = Input.Input()
         return base.posts_list.get_posts_by_ids(self.posts)
 
     def get_friends(self):
-        base = Input()
+        base = Input.Input()
         return base.user_list.get_names_by_ids(self.friends)
 
     def _update_self_in_database(self):
-        base = Input()
+        base = Input.Input()
         base.user_list.update_users_by_id(self.id, self)
 
     def post_created(self, id_):

@@ -9,7 +9,7 @@ class KeyField(Label):
 class ValueField(Label):
     def __init__(self, **kwargs):
         super(ValueField, self).__init__(**kwargs)
-        self.size_hint = (0.75, 1)
+        self.size_hint = (0.75, 3)
 
 class KVList(GridLayout):
     def __init__(self, data, **kwargs):
@@ -20,8 +20,9 @@ class KVList(GridLayout):
             self.add_widget(KeyField(
                 text = key
             ))
+            print(key, value)
             self.add_widget(ValueField(
-                text = value
+                text = value,        
             ))
         
 

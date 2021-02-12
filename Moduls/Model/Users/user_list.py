@@ -28,7 +28,7 @@ class User_list:
         return users[0]
 
     def _save_usr_to_database(self):
-        data_base = Output()
+        data_base = Output.Output()
         data_base.update_users(self.users)
 
     def add_user(self, data):
@@ -52,10 +52,10 @@ class User_list:
         user = [user for user in self.users if user.id == ids][0]
         
         #zmiany profilu
-        user.name = data.name if 'name' in data else user.name
-        user.surname = data.surname if 'surname' in data else user.surname
-        user.birth_date = data.birth_date if 'birth_date' in data else user.birth_date
-        user.avg_daily_activity = data.avg_daily_activity if 'avg_daily_activity' in data else user.avg_daily_activity
+        user.name = data['name'] if 'name' in data else user.name
+        user.surname = data['surname'] if 'surname' in data else user.surname
+        user.birth_date = data['birth_date'] if 'birth_date' in data else user.birth_date
+        user.avg_daily_activity = data['avg_daily_activity'] if 'avg_daily_activity' in data else user.avg_daily_activity
         # id i joined_on nigdy nie zmieniamy
 
         #zmiany z działalności usera

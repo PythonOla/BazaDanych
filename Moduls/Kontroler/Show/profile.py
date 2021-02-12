@@ -11,7 +11,7 @@ class User_profile_controller:
             'birth_date' : user.birth_date,
             'friends' : user.get_friends(),
             'photos' : user.photos,
-            'posts' : user.get_posts(),
+            'avg_daily_activity' : user.avg_daily_activity,
             'joined_on' : user.joined_on
         }
     
