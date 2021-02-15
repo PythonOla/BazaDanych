@@ -1,6 +1,6 @@
 # Baza danych (projekt zaliczeniowy)
 
-## Temat pfojektu (ze strony)
+## Temat projektu (ze strony)
 Baza danych książek, płyt, itp. Baza powinna być zapisywana do pliku (txt, CSV, JSON). Operacje na bazie: wstawianie, usuwanie, wyszukiwanie, listowanie.
 
 ## Ogólnie
@@ -54,7 +54,7 @@ Baza danych książek, płyt, itp. Baza powinna być zapisywana do pliku (txt, C
     - attachments
     - likes
 
-### Co mamy?
+### Co mam?
 - Profile
 - Modele
 - Kontrolery
