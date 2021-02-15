@@ -1,33 +1,17 @@
 # Baza danych (projekt zaliczeniowy)
 
-## Plany
+## Ogólnie
 
-- Czego dokładnie baza? Coś w rodzaju pejsbuka
-- Co robimy z danymi? Wstawianie, usuwanie, wyszukiwanie, listowanie
-- Czy chcemy interfejs graficzny? Tak
-- Jakieś inne wodotryski - tak (zapytania - proste, wydruk - raczej pdf)
+- Czego dokładnie baza? Jest to baza danych dla administratora portalu takiego jak facebook lub nasza klasa
+- Co robimy z danymi? Wstawianie, usuwanie, wyszukiwanie (względem id, imienia i nazwiska), listowanie
+- Podstawowa reprezentacja graficzna
 
 
-## Technikalia (do rozstrzygnięcia po powyszym)
+## Technikalia 
 
 - Jaki format bazy? JSON 
-- Jaka biblioteka do interfejsu - Kivy
-- Jaka biblioteka do wodotrysków? - znaleźć
-- Jakie klasy/obiekty/wzorce projektowe wykorzystać - potem
-- Czy robimy testy jednostkowe - tak
-- Czy robimy testy wyzszego poziomu (i jeśli tak to czym) - zobaczymy
+- Jaka biblioteka do interfejsu? Kivy
 
-## Nice to have
-
-- Zastanowić się nad wydajnością działania bazy - zobaczymy
-- Statystyki bazy - moze, jeśli czasu wystarczy
-
-
-## Linki do znalezisk
-
-Kivy - https://kivy.org/#home
-
-## Projekt
 
 ### Format danych
 
@@ -75,10 +59,7 @@ Kivy - https://kivy.org/#home
 - Metod do modeli
 - Metod do User activity (kontrolery)
 - Zmiany danych w bazie
+- Widoki
 
-### Czego brakuje?
-- widoków
-- 
-
-
+### Temat pfojektu (ze strony)
 Baza danych książek, płyt, itp. Baza powinna być zapisywana do pliku (txt, CSV, JSON). Operacje na bazie: wstawianie, usuwanie, wyszukiwanie, listowanie.
