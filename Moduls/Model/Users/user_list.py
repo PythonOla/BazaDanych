@@ -1,5 +1,6 @@
 from .user import User
 from ..InOut import Output
+from datetime import date
 
 class User_list:
     def __init__(self, users):
@@ -22,14 +23,27 @@ class User_list:
         )
 
     def get_user_by_id(self, _id):
-        print(_id)
         users = [user for user in self.users if int(user.id) == int(_id)]
-        print([user.id for user in self.users])
         return users[0]
+
+    def find_users_by_id(self, _id):
+        try:
+            converted_id = int(_id)
+            users = [user for user in self.users if int(user.id) == int(_id)]
+            return users
+        except ValueError:
+            return []
+
+    def search_by_name(self, txt):
+        # wszystkie osoby ktorych imie i nazwisko zawiera podany ciąg znaków
+        users = [user for user in self.users if (user.name + " " + user.surname).lower().count(txt.lower()) > 0]
+        return users
+
 
     def _save_usr_to_database(self):
         data_base = Output.Output()
-        data_base.update_users(self.users)
+        users_to_serialize = list(map(lambda user: user.get_serializable(), self.users))
+        data_base.update_users(users_to_serialize)
 
     def add_user(self, data):
         #id liczymy od 0, więc musimy zacząć max_id od -1
@@ -40,6 +54,12 @@ class User_list:
 
         new_id = max_id + 1
         data['id'] = new_id
+        data['friends'] = []
+        data['posts'] = []
+        data['comments'] = []
+        data['likes'] = []
+        data['photos'] = []
+        data['joined_on'] = date.today().strftime('%Y-%m-%d')
         self.users.append(User(data))
         self._save_usr_to_database()
         return new_id

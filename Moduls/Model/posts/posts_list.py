@@ -20,7 +20,7 @@ class Posts_list:
         return posts
 
     def get_post_by_id(self, id_):
-        return self.get_posts_by_ids(id_)[0] 
+        return self.get_posts_by_ids([id_])[0] 
 
     def _save_post_to_database(self):
         data_base = Output()

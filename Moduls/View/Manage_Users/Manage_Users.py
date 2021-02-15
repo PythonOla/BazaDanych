@@ -32,18 +32,26 @@ class UserDataForm(GridLayout):
         }
 
 class Manage_users(BoxLayout):
-    def __init__(self, on_back, on_save, on_delete, user_data, **kwargs):
+    def __init__(self, on_back, on_save, on_delete = lambda _: _ ,user_data = {}, **kwargs):
         super(Manage_users, self).__init__(**kwargs)
         self.orientation = 'horizontal'
         self.form = UserDataForm(user_data = user_data)
+        self.on_back = on_back
+        self.on_save = on_save
+        self.on_delete = on_delete
         self.add_widget(self.form)
         menu_config = {
             "Powrót": on_back,
-            "Zapisz": lambda _: on_save(self.form.get_data())
+            "Zapisz": self.save_and_quit
         }
-        if 'id' in user_data:
-            menu_config['Usuń'] = on_delete
+        if 'name' in user_data:
+            menu_config['Usuń'] = self.delete_and_quit
         self.add_widget(Menu(menu_config))
 
-    
-        
+    def save_and_quit(self, _):
+        self.on_save(self.form.get_data())
+        self.on_back()
+
+    def delete_and_quit(self, _):
+        self.on_delete()
+        self.on_back()    

@@ -20,6 +20,21 @@ class User:
     def __ne__(self, other):
         return self.id != other.id
 
+    def get_serializable(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'surname': self.surname,
+            'birth_date': self.birth_date,
+            'friends': self.friends,
+            'likes': self.likes,
+            'posts': self.posts,
+            'photos': self.photos,
+            'comments': self.comments,
+            'avg_daily_activity': self.avg_daily_activity,
+            'joined_on': self.joined_on
+        }
+
     def get_likes(self):
         base = Input.Input()
         return base.likes_list.get_likes_by_ids(self.likes)

@@ -10,12 +10,12 @@ class Output:
         self.data_base_path = data_base_path
         with open(data_base_path, 'r+', encoding='utf-8') as file:
             self.data = load(file)
-            self.file = file
 
     def _update_data_section(self, new_data, section_name):
         self.data[section_name] = new_data
-        json_string = dumps(self.data)
-        self.file.write(json_string)
+        with open(self.data_base_path, 'w', encoding='utf-8') as file:
+            json_string = dumps(self.data)
+            file.write(json_string)
 
     def update_users(self, data):
         self._update_data_section(data, 'users')

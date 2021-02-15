@@ -1,4 +1,4 @@
-from ..InOut import Input
+from ..InOut.Input import Input
 
 class Like:
     def __init__(self, data):

@@ -3,12 +3,12 @@ from kivy.uix.boxlayout import BoxLayout
 from ..Menu.Menu import Menu
 from kivy.uix.label import Label
 
-class IdFinder(BoxLayout):
+class NameFinder(BoxLayout):
     def __init__(self, on_search, on_back, on_update, **kwargs):
-        super(IdFinder, self).__init__(**kwargs)
+        super(NameFinder, self).__init__(**kwargs)
         self.orientation = 'vertical'
         self.add_widget(Label(
-            text = "Wyszukaj uzytkownika po id",
+            text = "Wyszukaj uzytkownika po nazwie",
             font_size = 36
         ))
         self.txt_input = TextInput()
